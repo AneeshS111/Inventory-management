@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Management Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h2>Inventory Management Form</h2>
+        </div>
+        <form id="inventoryForm" method="post">
+            <div id="itemManagementSection">
+                <h3>Item Management</h3>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Item ID:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="itemId" class="form-control" onchange="validateItemManagementForm()">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Item Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="itemName" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Opening Stock:</label>
+                    <div class="col-sm-9">
+                        <input type="number" id="openingStock" step="0.001" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Unit of Measurement:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="uom" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div id="itemReceivedSection">
+                <h3>Item Received (Inward)</h3>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Receipt No:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="receiptNo" class="form-control" onchange="loadReceiptDetails()">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Receipt Date:</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="receiptDate" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Item ID:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="itemReceivedId" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Quantity Received:</label>
+                    <div class="col-sm-9">
+                        <input type="number" id="qtyReceived" step="0.001" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div id="itemIssuedSection">
+                <h3>Item Issued (Outward)</h3>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Issue No:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="issueNo" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Issue Date:</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="issueDate" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Item ID:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="itemIssuedId" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-3 text-center">Quantity Issued:</label>
+                    <div class="col-sm-9">
+                        <input type="number" id="qtyIssued" step="0.001" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="text-center">
+            <button class="btn btn-lg btn-primary" onclick="saveData()">Save</button>
+            <button class="btn btn-lg btn-primary" onclick="resetForm()">Reset</button>
+            <button class="btn btn-lg btn-primary" onclick="generateReport()">Generate Report</button>
+        </div>
+    </div>
+    <script src="projInv.js"></script>
+</body>
+</html>

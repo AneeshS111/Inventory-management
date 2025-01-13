@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Raw Material Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header, .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background: #f0f0f0;
+            padding: 15px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="date"], input[type="number"], button {
+            width: 100%;
+            padding: 8px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Inventory Management Dashboard</h1>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <button id="menuItemManagement">Item Management</button>
+            <button id="menuItemReceived">Item Received (Inward)</button>
+            <button id="menuItemIssued">Item Issued (Outward)</button>
+            <button id="menuItemReport">Item Report</button>
+        </div>
+        <div class="content">
+            <div id="itemManagement" class="hidden">
+                <h2>Item Management</h2>
+                <div class="form-group">
+                    <label for="itemId">Item ID:</label>
+                    <input type="text" id="itemId" />
+                </div>
+                <div class="form-group">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" />
+                </div>
+                <div class="form-group">
+                    <label for="openingStock">Opening Stock:</label>
+                    <input type="number" id="openingStock" step="0.001" />
+                </div>
+                <div class="form-group">
+                    <label for="uom">Unit of Measurement (UoM):</label>
+                    <input type="text" id="uom" />
+                </div>
+                <button id="saveItemBtn">Save Item</button>
+            </div>
+            <div id="itemReceived" class="hidden">
+                <h2>Item Received (Inward)</h2>
+                <div class="form-group">
+                    <label for="receiptNo">Receipt No:</label>
+                    <input type="text" id="receiptNo" />
+                </div>
+                <div class="form-group">
+                    <label for="receiptDate">Receipt Date:</label>
+                    <input type="date" id="receiptDate" />
+                </div>
+                <div class="form-group">
+                    <label for="itemReceivedId">Item ID:</label>
+                    <input type="text" id="itemReceivedId" />
+                </div>
+                <div class="form-group">
+                    <label for="qtyReceived">Quantity Received:</label>
+                    <input type="number" id="qtyReceived" step="0.001" />
+                </div>
+                <button id="saveReceivedBtn">Save Received Item</button>
+                <button id="loadReceiptBtn">Load Receipt Details</button>
+            </div>
+            <div id="itemIssued" class="hidden">
+                <h2>Item Issued (Outward)</h2>
+                <div class="form-group">
+                    <label for="issueNo">Issue No:</label>
+                    <input type="text" id="issueNo" />
+                </div>
+                <div class="form-group">
+                    <label for="issueDate">Issue Date:</label>
+                    <input type="date" id="issueDate" />
+                </div>
+                <div class="form-group">
+                    <label for="itemIssuedId">Item ID:</label>
+                    <input type="text" id="itemIssuedId" />
+                </div>
+                <div class="form-group">
+                    <label for="qtyIssued">Quantity Issued:</label>
+                    <input type="number" id="qtyIssued" step="0.001" />
+                </div>
+                <button id="saveIssuedBtn">Save Issued Item</button>
+            </div>
+            <div id="itemReport" class="hidden">
+                <h2>Item Report</h2>
+                <div class="form-group">
+                    <label for="itemRangeStart">Item ID Start Range:</label>
+                    <input type="text" id="itemRangeStart" />
+                </div>
+                <div class="form-group">
+                    <label for="itemRangeEnd">Item ID End Range:</label>
+                    <input type="text" id="itemRangeEnd" />
+                </div>
+                <button id="generateReportBtn">Generate Report</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Inventory Management System</p>
+    </div>
+    <script type="text/javascript" src="login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <script src="Inv.js"></script>
+</body>
+</html>
+ 
